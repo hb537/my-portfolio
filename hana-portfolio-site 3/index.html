@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hana Bauta | Cornell MPH</title>
+<meta name="description" content="Hana Bauta — Cornell MPH candidate in Infectious Disease Epidemiology. Applied work in survey analysis, health communication, and equity-centered design.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f1412;
+  --text:#2c3531;
+  --muted:#5c6863;
+  --accent:#1a4d44;
+  --accent-hover:#143d36;
+  --accent-soft:#eef5f3;
+  --red:#b33a3a;
+  --red-hover:#8f2e2e;
+  --red-soft:#f7ecec;
+  --line:#e6e2db;
+  --bg:#f7f6f3;
+  --bg-alt:#efece6;
+  --card:#ffffff;
+  --warm:#f0ebe4;
+  --shadow:0 1px 3px rgba(15,20,18,.06), 0 10px 28px -14px rgba(15,20,18,.16);
+  --shadow-soft:0 1px 2px rgba(15,20,18,.04);
+  --radius:10px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Source Sans 3", system-ui, -apple-system, sans-serif;
+  font-size:16.5px;
+  line-height:1.7;
+  color:var(--text);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{
+  font-family:"Libre Baskerville", Georgia, serif;
+  color:var(--ink);
+  line-height:1.28;
+  font-weight:700;
+  margin:0 0 .45em;
+  letter-spacing:-0.01em;
+}
+h1{font-size:clamp(26px,4.2vw,36px)}
+h2{font-size:clamp(20px,2.8vw,26px)}
+h3{font-size:17px;font-family:"Source Sans 3",sans-serif;font-weight:600;letter-spacing:0}
+p{margin:0 0 1em}
+a{color:var(--accent);transition:color .15s}
+a:hover{color:var(--accent-hover)}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:880px;margin:0 auto;padding:0 28px}
+
+/* Header */
+header{
+  border-bottom:1px solid var(--line);
+  background:rgba(247,246,243,.92);
+  position:sticky;top:0;z-index:20;
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+header .wrap{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 28px;gap:20px;flex-wrap:wrap;
+}
+.brand{
+  font-family:"Libre Baskerville",Georgia,serif;
+  font-weight:700;font-size:17px;color:var(--ink);text-decoration:none;
+  letter-spacing:-0.01em;
+}
+.brand:hover{color:var(--red);text-decoration:none}
+nav{display:flex;gap:6px 22px;flex-wrap:wrap}
+nav a{
+  text-decoration:none;color:var(--muted);font-weight:500;font-size:14.5px;
+  padding:4px 0;border-bottom:2px solid transparent;
+  transition:color .15s, border-color .15s;
+}
+nav a:hover,nav a.on{color:var(--ink);border-bottom-color:var(--red);text-decoration:none}
+
+.page{display:none}
+.page.on{display:block;min-height:calc(100vh - 120px)}
+
+/* Section background differentiation */
+#p-home.on{
+  background:linear-gradient(180deg, #f7f6f3 0%, #f3f0ea 100%);
+}
+#p-projects.on{
+  background:linear-gradient(180deg, #eef5f3 0%, #f4f7f6 40%, #f7f6f3 100%);
+}
+#p-service.on{
+  background:linear-gradient(180deg, #f5f0eb 0%, #f7f6f3 50%, #f0ebe4 100%);
+}
+#p-resume.on{
+  background:linear-gradient(180deg, #f7ecec 0%, #f7f6f3 55%);
+}
+
+/* Soft panel behind project lists for extra separation */
+#p-projects .wrap,
+#p-service .wrap{
+  padding-bottom:48px;
+}
+.pagehead{
+  border-bottom:1px solid transparent;
+}
+
+/* Intro / About */
+.intro{
+  display:grid;
+  grid-template-columns:minmax(160px,210px) 1fr;
+  gap:48px;
+  padding:56px 0 52px;
+  align-items:start;
+}
+@media(max-width:700px){
+  .intro{grid-template-columns:1fr;gap:28px;padding:36px 0 40px}
+  .photo-wrap{max-width:180px;margin:0 auto}
+}
+.photo-wrap{width:100%}
+.photo-frame{
+  aspect-ratio:1/1;
+  border-radius:50%;
+  overflow:hidden;
+  background:var(--accent-soft);
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+}
+.photo-frame img{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center top;
+}
+.intro-text .eyebrow{
+  font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--red);margin-bottom:12px;
+}
+.intro-text h1{margin-bottom:14px}
+.intro-text .lead{
+  font-size:18px;color:var(--ink);margin-bottom:1.25em;
+  line-height:1.55;font-weight:500;
+}
+.intro-text p{max-width:38em;color:var(--text)}
+.contact-line{margin-top:24px;font-size:14.5px;color:var(--muted)}
+.contact-line a{font-weight:600;text-decoration:none}
+.contact-line a:hover{text-decoration:underline}
+
+.pagehead{padding:44px 0 10px}
+.pagehead p{color:var(--muted);max-width:36em;margin-bottom:0}
+.section-label{
+  font-size:11.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--red);margin-bottom:10px;
+}
+
+/* Sub-tabs */
+.subnav{
+  display:flex;flex-wrap:wrap;gap:6px;
+  margin:22px 0 4px;
+  padding-bottom:16px;
+  border-bottom:1px solid var(--line);
+}
+.subnav button{
+  font-family:inherit;
+  font-size:13.5px;
+  font-weight:600;
+  color:var(--muted);
+  background:transparent;
+  border:1px solid transparent;
+  border-radius:999px;
+  padding:7px 14px;
+  cursor:pointer;
+  transition:background .15s, color .15s, border-color .15s;
+}
+.subnav button:hover{color:var(--ink);background:var(--warm)}
+.subnav button.on{
+  color:#fff;
+  background:var(--red);
+  border-color:var(--red);
+}
+
+.subpanel{display:none}
+.subpanel.on{display:block}
+
+/* Project cards */
+.project{
+  padding:32px 0;
+  border-bottom:1px solid var(--line);
+}
+.project:last-child{border-bottom:0}
+.project .meta{
+  display:flex;flex-wrap:wrap;gap:8px;
+  font-size:12.5px;color:var(--muted);margin-bottom:12px;
+}
+.project .meta span{
+  background:var(--warm);
+  padding:4px 11px;
+  border-radius:6px;
+  font-weight:500;
+  color:var(--muted);
+}
+.project h3.title{
+  font-family:"Libre Baskerville",Georgia,serif;
+  font-size:19px;
+  font-weight:700;
+  margin:0 0 10px;
+  color:var(--ink);
+  letter-spacing:-0.01em;
+}
+.project h4{
+  margin-top:1.2em;margin-bottom:.4em;
+  font-size:14px;font-weight:600;
+  color:var(--ink);
+  letter-spacing:.02em;
+  text-transform:uppercase;
+  font-family:"Source Sans 3",sans-serif;
+}
+.project ul{padding-left:1.2em;margin:0 0 1em}
+.project li{margin-bottom:.4em}
+
+.stats{display:flex;flex-wrap:wrap;gap:20px 36px;margin:18px 0 8px}
+.stat strong{
+  display:block;font-family:"Libre Baskerville",Georgia,serif;
+  font-size:32px;color:var(--accent);line-height:1.1;
+  letter-spacing:-0.02em;
+}
+.stat span{font-size:13.5px;color:var(--muted);max-width:13em;display:block;margin-top:4px}
+
+.project-links{margin-top:16px}
+.project-links a{
+  display:inline-block;margin-right:12px;margin-bottom:10px;
+  background:var(--accent);color:#fff;
+  padding:10px 20px;border-radius:8px;
+  font-weight:600;font-size:14.5px;text-decoration:none;
+  transition:background .15s, transform .15s;
+}
+.project-links a:hover{background:var(--accent-hover);color:#fff;text-decoration:none;transform:translateY(-1px)}
+
+/* Preview cards */
+.preview-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,210px));
+  gap:14px;
+  margin:16px 0 4px;
+}
+.preview-card{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:var(--card);
+  box-shadow:var(--shadow);
+  transition:box-shadow .2s, border-color .2s, transform .2s;
+}
+.preview-card:hover{
+  border-color:var(--red);
+  box-shadow:0 4px 16px -6px rgba(15,20,18,.18);
+  transform:translateY(-2px);
+  text-decoration:none;
+}
+.preview-card img{
+  width:100%;
+  aspect-ratio:3/4;
+  object-fit:cover;
+  object-position:top center;
+  background:#f0eeea;
+}
+.preview-card.wide img{aspect-ratio:16/10}
+.preview-card .cap{
+  padding:10px 12px;
+  font-size:12.5px;
+  font-weight:600;
+  color:var(--accent);
+  border-top:1px solid var(--line);
+  background:#fafaf8;
+}
+.preview-card .cap small{
+  display:block;
+  font-weight:500;
+  color:var(--muted);
+  font-size:11.5px;
+  margin-top:3px;
+}
+
+.media-row{
+  display:flex;flex-wrap:wrap;gap:18px;margin:18px 0;
+}
+.media-row figure{margin:0;flex:1 1 240px;max-width:400px}
+.media-row img{
+  width:100%;
+  border-radius:var(--radius);
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+}
+.media-row figcaption{font-size:13px;color:var(--muted);margin-top:8px}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:18px;
+  margin:20px 0 6px;
+}
+.gallery figure{margin:0}
+.gallery img{
+  width:100%;
+  border-radius:var(--radius);
+  border:1px solid var(--line);
+  aspect-ratio:4/3;
+  object-fit:cover;
+  box-shadow:var(--shadow);
+}
+.gallery figcaption{font-size:13px;color:var(--muted);margin-top:8px}
+
+/* Resume gate */
+.resume-gate{
+  max-width:480px;margin:56px auto;text-align:center;padding:44px 28px;
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  box-shadow:var(--shadow);
+}
+.resume-gate h1{font-size:24px;margin-bottom:10px}
+.resume-gate p{color:var(--muted);margin-bottom:0}
+.resume-gate a.mail{
+  display:inline-block;margin-top:20px;
+  background:var(--red);color:#fff;padding:12px 24px;border-radius:8px;
+  text-decoration:none;font-weight:600;font-size:15px;
+  transition:background .15s;
+}
+.resume-gate a.mail:hover{background:var(--red-hover);text-decoration:none;color:#fff}
+.muted{color:var(--muted);font-size:14.5px}
+
+/* Footer */
+footer{
+  border-top:1px solid var(--line);
+  padding:28px 0;margin-top:40px;
+  font-size:13.5px;color:var(--muted);
+}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center}
+footer a{color:var(--accent);text-decoration:none;font-weight:500}
+footer a:hover{text-decoration:underline}
+
+/* Section bands */
+.page.on > .wrap{padding-bottom:48px}
+.pagehead{padding:48px 0 12px}
+
+/* Elevated project blocks */
+.project{
+  padding:28px 28px;
+  margin:0 0 18px;
+  border-bottom:none;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:14px;
+  box-shadow:var(--shadow-soft);
+}
+.project:last-child{border-bottom:none;margin-bottom:0}
+.project:nth-child(even){
+  background:#fbfaf8;
+}
+
+/* Stronger media frames */
+.preview-card{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:var(--card);
+  box-shadow:var(--shadow);
+  transition:box-shadow .2s, border-color .2s, transform .2s;
+}
+.preview-card:hover{
+  border-color:var(--red);
+  box-shadow:0 6px 22px -8px rgba(15,20,18,.22);
+  transform:translateY(-3px);
+  text-decoration:none;
+}
+.preview-card img{
+  width:100%;
+  aspect-ratio:3/4;
+  object-fit:cover;
+  object-position:top center;
+  background:var(--bg-alt);
+}
+.preview-card .cap{
+  padding:11px 13px;
+  font-size:12.5px;
+  font-weight:600;
+  color:var(--accent);
+  border-top:1px solid var(--line);
+  background:linear-gradient(180deg,#fafaf8 0%,#f3f1ec 100%);
+}
+
+.media-row figure{
+  margin:0;flex:1 1 240px;max-width:400px;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:10px;
+  box-shadow:var(--shadow);
+}
+.media-row img{
+  width:100%;
+  border-radius:8px;
+  border:none;
+  box-shadow:none;
+}
+.media-row figcaption{font-size:13px;color:var(--muted);margin-top:10px;padding:0 4px 4px}
+
+.gallery figure{
+  margin:0;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:10px;
+  box-shadow:var(--shadow);
+}
+.gallery img{
+  width:100%;
+  border-radius:8px;
+  border:none;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  box-shadow:none;
+  background:var(--bg-alt);
+}
+.gallery figcaption{font-size:13px;color:var(--muted);margin-top:10px;padding:0 4px 4px}
+
+/* Intro sits on plain bg; projects area feels segmented */
+#p-projects .wrap,
+#p-service .wrap{
+  background:transparent;
+}
+#p-home .intro{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:40px 36px;
+  margin:40px 0 32px;
+  box-shadow:var(--shadow-soft);
+}
+@media(max-width:700px){
+  #p-home .intro{padding:28px 20px;margin:28px 0}
+}
+
+/* Subnav sits on a soft band */
+.subnav{
+  display:flex;flex-wrap:wrap;gap:6px;
+  margin:22px 0 20px;
+  padding:12px 14px 14px;
+  border-bottom:none;
+  background:var(--bg-alt);
+  border:1px solid var(--line);
+  border-radius:12px;
+}
+
+.resume-gate{
+  max-width:480px;margin:56px auto;text-align:center;padding:44px 28px;
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  box-shadow:var(--shadow);
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#home">Hana Bauta</a>
+    <nav aria-label="Main">
+      <a href="#home" data-page="home">About</a>
+      <a href="#projects" data-page="projects">Projects</a>
+      <a href="#service" data-page="service">Service</a>
+      <a href="#resume" data-page="resume">Resume</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<div class="page on" id="p-home">
+  <div class="wrap">
+    <div class="intro">
+      <div class="photo-wrap">
+        <div class="photo-frame">
+          <img src="assets/hana-about-portrait.png" alt="Portrait of Hana Bauta">
+        </div>
+      </div>
+      <div class="intro-text">
+        <div class="eyebrow">Cornell MPH · Infectious Disease Epidemiology</div>
+        <h1>Hana Bauta</h1>
+        <p class="lead">I’m drawn to public health because I believe meaningful change begins with understanding not only what affects people’s health, but also who is being left out of the solutions.</p>
+        <p>My interest in the field grew from seeing how gaps in access, communication, and resources can prevent even the most promising research and interventions from reaching the people who need them. In 2018, I experienced this firsthand while helping adapt child mental health questionnaires into picture-based formats for families in Uganda and Nepal. It taught me that improving health outcomes requires more than developing effective tools; it requires making them accessible, relevant, and responsive to the communities they serve.</p>
+        <p>I earned my B.S. in Public Health from Rutgers University, graduating magna cum laude, and am now pursuing an MPH at Cornell University with a concentration in Infectious Disease Epidemiology. I chose this concentration to deepen my understanding of disease transmission and outbreak dynamics, while strengthening the epidemiological and biostatistical methods needed to investigate complex public health problems. Through my research experiences with NYU Langone’s Department of Population Health, I have also explored how data can inform more equitable health interventions, including conducting a national needs assessment of adolescent access to mental health care and developing an onboarding toolkit for a digital intervention.</p>
+        <p>Across my experiences, I have become particularly interested in the intersection of infectious disease epidemiology, health equity, and applied research. Whether studying disease patterns, evaluating surveillance systems, or designing interventions, I want to understand not only what the data reveals, but whose experiences they represent and how findings can translate into meaningful action.</p>
+        <p>I see my MPH as an important foundation for eventually pursuing a PhD, where I can further develop the methodological expertise to investigate disease dynamics, address gaps in public health evidence, and contribute to research that informs policy and practice. Ultimately, I want my work to bridge rigorous epidemiological research and real-world public health needs, helping turn what we learn into solutions that make a difference.</p>
+        <p class="contact-line">
+          <a href="mailto:hb537@cornell.edu">hb537@cornell.edu</a>
+          · <a href="https://www.linkedin.com/in/hana-bauta" target="_blank" rel="noopener">LinkedIn</a>
+          · <a href="https://github.com/hb537" target="_blank" rel="noopener">GitHub</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page" id="p-projects">
+  <div class="wrap">
+    <div class="pagehead">
+      <div class="section-label">Projects</div>
+      <h1>My Work</h1>
+      <p>Research and internship experience, APEx deliverables, posters and awards, and graduate-level coursework.</p>
+    </div>
+
+    <div class="subnav" role="tablist" aria-label="Project categories">
+      <button type="button" data-sub="research" class="on" role="tab" aria-selected="true">Research &amp; Internship</button>
+      <button type="button" data-sub="apex" role="tab" aria-selected="false">APEx Deliverables</button>
+      <button type="button" data-sub="posters" role="tab" aria-selected="false">Posters &amp; Awards</button>
+      <button type="button" data-sub="course" role="tab" aria-selected="false">Coursework</button>
+    </div>
+
+    <!-- Research / Internship -->
+    <div class="subpanel on" id="sub-research" role="tabpanel">
+
+      <article class="project">
+        <div class="meta">
+          <span>May 2026 – Present</span>
+          <span>NYU Langone Health · Dept. of Population Health</span>
+          <span>Graduate Research Intern</span>
+        </div>
+        <h3 class="title">NIMH-funded study of preventive strategies for child health disparities</h3>
+        <p>As a graduate research intern, I contribute to a NIMH-funded study of preventive strategies for child health disparities, supporting data collection, statistical analysis, and dissemination of findings. Within this role, I designed and ran an independent secondary analysis of the 2024 National Survey of Children’s Health using complex survey methods in R, built a reproducible R Markdown pipeline for weighted prevalence tables and figures, and translated the findings into a prototype digital intervention toolkit. Supervised by Hyungrok Do, PhD (PI: Keng-Yen Huang, PhD). The full APEx work is listed under the APEx Deliverables tab.</p>
+        <div class="gallery">
+          <figure>
+            <img src="assets/nyu-langone-building.jpg" alt="NYU Langone Health hospital building with the NYU Langone Health sign on a glass tower">
+            <figcaption>NYU Langone Health</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/nyu-langone-logo.jpg" alt="NYU Langone Health logo">
+            <figcaption>NYU Langone Health · Department of Population Health</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="meta">
+          <span>2018–2019</span>
+          <span>NYU Langone Health</span>
+          <span>Project Intern</span>
+        </div>
+        <h3 class="title">Cross-cultural mental health measurement</h3>
+        <p>Helped adapt child mental health questionnaires into picture-based formats for low-literacy families in Uganda and Nepal. Worked with a multidisciplinary international team on instrument development and parent-facing materials so standardized tools (including the Strengths and Difficulties Questionnaire) could be used more validly in those settings.</p>
+      <div class="preview-grid">
+        <a class="preview-card" href="assets/handout-working-together.jpg" target="_blank" rel="noopener">
+          <img src="assets/handout-working-together-thumb.jpg" alt="Illustrated handout titled Working Together: Parent-Teacher Partnership, explaining how praise and rewards help children learn" loading="lazy">
+          <div class="cap">Working Together handout <small>Parent–teacher partnership</small></div>
+        </a>
+        <a class="preview-card" href="assets/handout-areas-of-development.jpg" target="_blank" rel="noopener">
+          <img src="assets/handout-areas-of-development-thumb.jpg" alt="Illustrated handout listing areas of child development (social, emotional, behavioral, physical, academic) with definitions and family goals" loading="lazy">
+          <div class="cap">Areas of development handout <small>Definitions and family goals</small></div>
+        </a>
+      </div>
+    </article>
+
+    </div>
+
+    <!-- APEx -->
+    <div class="subpanel" id="sub-apex" role="tabpanel">
+
+      <article class="project" id="needs">
+        <div class="meta">
+          <span>APEx · Deliverable 1</span>
+          <span>NYU Langone Health</span>
+          <span>R · complex survey design</span>
+        </div>
+        <h3 class="title">Who isn’t getting care?</h3>
+        <p>A needs assessment of U.S. teens’ access to mental health care, using the 2024 National Survey of Children’s Health (21,960 teens ages 12 to 17). I compared low-income teens (at or below 200% of the poverty level) with higher-income teens to show where unmet need is concentrated and what the team’s digital tool had to design around.</p>
+        <h4>Purpose &amp; impact</h4>
+        <p>The brief gave the product and evaluation teams a shared, population-representative picture of unmet need—so design choices (who the tool is for, what not to require at first use) were grounded in data rather than assumptions.</p>
+        <h4>My role</h4>
+        <p>Designed and ran the analysis; built a reproducible R Markdown pipeline with weighted prevalence tables and figures; delivered the needs-assessment brief.</p>
+        <div class="preview-grid">
+          <a class="preview-card" href="assets/Needs_Assessment.pdf" target="_blank" rel="noopener">
+            <img src="assets/preview-needs-web.jpg" alt="Preview of needs assessment report title page">
+            <div class="cap">Open report (PDF) <small>Needs assessment · Aug 2026</small></div>
+          </a>
+        </div>
+      </article>
+
+      <article class="project" id="toolkit">
+        <div class="meta">
+          <span>APEx · Deliverable 2</span>
+          <span>NYU Langone Health</span>
+          <span>Content design</span>
+        </div>
+        <h3 class="title">Equity-informed onboarding toolkit for an adolescent digital mental health intervention</h3>
+        <p>An adolescent-facing onboarding toolkit for a proposed digital mental health intervention, built from the needs assessment to lower barriers to care for underserved youth. The five-screen mobile flow uses supportive, non-diagnostic language, explains data use and privacy, replaces diagnostic labels with an experience-based check-in and an RDoC-informed explore step, and offers a brief, low-burden activity for low motivation.</p>
+        <h4>Purpose &amp; impact</h4>
+        <p>Translates findings on unmet need and access barriers into intervention design, specifying what adolescents see, in what order, and what the tool should never require before engagement (such as insurance information or a diagnostic label). Includes plain-language materials, safety, privacy, and equity guardrails, and handoff notes for evaluation and implementation. It is a design prototype and has not been clinically validated.</p>
+        <div class="media-row">
+          <figure style="max-width:640px;flex:1 1 100%">
+            <img src="assets/toolkit-prototype-screens.jpg" alt="Two prototype screens from the onboarding toolkit: a welcome screen that reads Feeling stuck? You don’t have to figure it out alone, and a starter-activity screen titled When nothing feels rewarding.">
+            <figcaption>Prototype screens: the welcome screen and the “When nothing feels rewarding” starter activity.</figcaption>
+          </figure>
+        </div>
+        <div class="preview-grid">
+          <a class="preview-card" href="assets/APEx_Deliverable_2_Toolkit.pdf" target="_blank" rel="noopener">
+            <img src="assets/preview-toolkit-web.jpg" alt="Preview of onboarding toolkit document">
+            <div class="cap">Open toolkit (PDF) <small>Onboarding &amp; engagement · Aug 2026</small></div>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Posters & awards -->
+    <div class="subpanel" id="sub-posters" role="tabpanel">
+
+      <article class="project" id="apex-poster">
+        <div class="meta">
+          <span>APEx · Poster</span>
+          <span>Cornell MPH poster session</span>
+        </div>
+        <h3 class="title">Translating evidence into design</h3>
+        <p>Poster overview on the Applied Practice Experience with NYU Langone on translating evidence into design and turning national findings into a teen-facing onboarding toolkit.</p>
+        <div class="preview-grid">
+          <a class="preview-card" href="assets/APEx_Poster.pdf" target="_blank" rel="noopener">
+            <img src="assets/preview-apex-web.jpg" alt="Preview of APEx poster">
+            <div class="cap">Open PDF <small>11×17 poster</small></div>
+          </a>
+        </div>
+      </article>
+
+      <article class="project" id="precision-care">
+        <div class="meta">
+          <span>Conference poster</span>
+          <span>New Wave of AI in Healthcare 2026</span>
+        </div>
+        <h3 class="title">From engagement metrics to precision care</h3>
+        <p>A co-authored poster on using computational phenotyping to personalize digital mental health tools. Clustering 181 adults by age, tech use, and distress turned up four distinct phenotypes, including highly engaged users with the highest distress, which shows that high engagement doesn’t mean low distress.</p>
+        <p class="muted">Do, H., Liu, J., Bauta, H., Bauta, B., &amp; Huang, K.-Y. (2026, May). NY Academy of Sciences / Mount Sinai.</p>
+        <div class="media-row">
+          <figure>
+            <a href="assets/Precision_Care_Poster.pdf" target="_blank" rel="noopener">
+              <img src="assets/preview-precision-web.jpg" alt="Preview of Precision Care poster">
+            </a>
+            <figcaption><a href="assets/Precision_Care_Poster.pdf" target="_blank" rel="noopener">Open poster (PDF)</a></figcaption>
+          </figure>
+          <figure>
+            <img src="assets/precision-care-photo-web.jpg" alt="Hana Bauta with the Precision Care poster at New Wave of AI in Healthcare 2026">
+            <figcaption>Presenting at New Wave of AI in Healthcare 2026</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="project" id="uganda">
+        <div class="meta">
+          <span>Poster</span>
+          <span>Cornell Center for Health Equity Symposium 2026</span>
+        </div>
+        <h3 class="title">Child mental health equity in low-resource school settings</h3>
+        <p>A feasibility study of a short, digitally delivered training that helps primary school teachers in urban and rural Uganda support children’s mental health and behavior. We adapted the modules with local stakeholders, and the 35 teachers who tried them found them clear, relevant to their classrooms, and useful day to day.</p>
+        <p class="muted">Bauta, H., &amp; Huang, K.-Y. (2026, May). Collaboration with Makerere University and Uganda Ministry of Education &amp; Health.</p>
+        <div class="media-row">
+          <figure>
+            <img src="assets/uganda-poster-web.jpg" alt="Uganda child mental health equity poster">
+            <figcaption>Symposium poster</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/hana-poster-photo.jpg" alt="Hana Bauta presenting at the symposium">
+            <figcaption>Presenting, May 2026</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="project" id="nudge">
+        <div class="meta">
+          <span>Competition</span>
+          <span>NudgeLab · 2026 · Top Team</span>
+        </div>
+        <h3 class="title">CareSynch — Nudge Impact Award</h3>
+        <p>My team co-designed CareSynch, a precision health intervention that uses AI-driven just-in-time adaptive interventions to support people with Type 2 diabetes and weight-related conditions in limited-access settings. We won the Nudge Impact Award (Top Team) in the Health, Wellbeing &amp; Human Habits track at NudgeLab, run by O.P. Jindal Global University.</p>
+        <div class="preview-grid">
+          <a class="preview-card wide" href="assets/nudge-impact-award-web.jpg" target="_blank" rel="noopener">
+            <img src="assets/nudge-impact-award-web.jpg" alt="Nudge Impact Award certificate" style="aspect-ratio:16/11;object-fit:contain;background:#fff;padding:8px">
+            <div class="cap">View certificate <small>Top Team · April 2026</small></div>
+          </a>
+          <a class="preview-card wide" href="assets/nudge-caresync-team.jpg" target="_blank" rel="noopener">
+            <img src="assets/nudge-caresync-team.jpg" alt="CareSynch team at NudgeLab's Battle of Nudges" style="aspect-ratio:1/1;object-fit:contain;background:#fff">
+            <div class="cap">CareSynch team at NudgeLab <small>Battle of Nudges · April 2026</small></div>
+          </a>
+        </div>
+      </article>
+
+      <article class="project" id="hudson">
+        <div class="meta">
+          <span>Undergraduate research writing</span>
+          <span>Rutgers URWC 2023 · Finalist</span>
+        </div>
+        <h3 class="title">Pharmaceutical pollution in the Hudson River</h3>
+        <p>A proposal for the Hudson River Foundation to reduce pharmaceutical pollution in the river through public education. The plan uses infographic mailers and a website to show households in Rockland and Westchester counties how to dispose of unused medications safely through drug take-back programs. It was a finalist at the Rutgers Undergraduate Research Writing Conference and is archived in Rutgers University Libraries.</p>
+        <div class="preview-grid">
+          <a class="preview-card" href="assets/Hudson_River_Pollution_Intervention.pdf" target="_blank" rel="noopener">
+            <img src="assets/preview-hudson-web.jpg" alt="Preview of Hudson River paper cover">
+            <div class="cap">Open paper (PDF) <small>Educational intervention</small></div>
+          </a>
+          <a class="preview-card wide" href="assets/URWC_Presentation_Hudson_River.pdf" target="_blank" rel="noopener">
+            <img src="assets/preview-urwc-slides-web.jpg" alt="Title slide of the URWC presentation on pharmaceutical pollution in the Hudson River">
+            <div class="cap">Open presentation slides (PDF) <small>URWC panel presentation</small></div>
+          </a>
+        </div>
+        <div class="media-row">
+          <figure>
+            <img src="assets/urwc-panel-web.jpg" alt="Hana Bauta with three fellow panelists at the Rutgers Undergraduate Research Writing Conference">
+            <figcaption>Panel at the Rutgers Undergraduate Research Writing Conference</figcaption>
+          </figure>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Coursework -->
+    <div class="subpanel" id="sub-course" role="tabpanel">
+
+      <article class="project" id="ticksafe">
+        <div class="meta">
+          <span>VTPEH 6182 · Public Health Planning</span>
+          <span>Spring 2026</span>
+          <span>Group grant proposal</span>
+        </div>
+        <h3 class="title">TickSafe Finger Lakes Initiative</h3>
+        <p>A group grant proposal for a one-year pilot to reduce tick-borne disease in the Finger Lakes through hands-on community outreach. Grounded in Social Cognitive Theory, the initiative focused on strengthening tick-borne disease knowledge, increasing the visibility of prevention messaging, and building the practical skills needed to adopt consistent protective behaviors.</p>
+        <h4>Purpose &amp; impact</h4>
+        <p>Move beyond passive information toward active outreach in high-exposure settings, with sustainability and equity built into the plan—and a model that could be adapted and replicated as tick populations and disease risk expand.</p>
+        <div class="preview-grid">
+          <a class="preview-card" href="assets/TickSafe_Grant_Proposal.pdf" target="_blank" rel="noopener">
+            <img src="assets/preview-ticksafe-web.jpg" alt="Preview of TickSafe grant proposal">
+            <div class="cap">Open proposal (PDF) <small>18 pages · Group 3B</small></div>
+          </a>
+        </div>
+      </article>
+
+      <article class="project" id="r-report">
+        <div class="meta">
+          <span>VTPEH 6270 · Data Analysis with R</span>
+          <span>May 2026</span>
+        </div>
+        <h3 class="title">Internet use and anxiety among U.S. college students</h3>
+        <p>An analysis of the relationship between internet use and anxiety among 34,953 U.S. college students using 2024–2025 Healthy Minds Study data. Students who spent more time online reported higher anxiety, but this relationship became much weaker after accounting for depression and other factors, with differences among sub-group populations, such as first generation students.</p>
+        <h4>Purpose &amp; impact</h4>
+        <p>Understanding which students may be more vulnerable to anxiety can help campus mental health teams develop more targeted support. The accompanying report and interactive Shiny app allow users to explore the findings.</p>
+        <div class="preview-grid">
+          <a class="preview-card" href="assets/Internet_Anxiety_Final_Report.pdf" target="_blank" rel="noopener">
+            <img src="assets/preview-r-report-web.jpg" alt="Preview of final report title page">
+            <div class="cap">Open final report (PDF) <small>Full analysis write-up</small></div>
+          </a>
+        </div>
+        <div class="project-links">
+          <a href="https://hbauta.shinyapps.io/application/" target="_blank" rel="noopener">Open the Shiny app</a>
+          <a href="https://github.com/hb537/HanaBauta_Finalproject" target="_blank" rel="noopener">Code on GitHub</a>
+        </div>
+      </article>
+
+      
+
+      
+
+    </div>
+
+  </div>
+</div>
+
+<div class="page" id="p-service">
+  <div class="wrap">
+    <div class="pagehead">
+      <div class="section-label">Service &amp; community</div>
+      <h1>Programs &amp; Volunteer Work</h1>
+      <p>Program coordination, outreach, and community health work outside formal research deliverables.</p>
+    </div>
+
+    <article class="project" id="nmdp">
+      <div class="meta">
+        <span>2025–2026</span>
+        <span>National Marrow Donor Program (NMDP)</span>
+      </div>
+      <h3 class="title">NMDP community volunteer</h3>
+      <p>I support donor registry outreach and community health education—tabling on campus, talking with people about why swabbing matters, and helping run registration events.</p>
+      <div class="gallery">
+        <figure>
+          <img src="assets/nmdp-table-web.jpg" alt="NMDP registration table outreach">
+          <figcaption>NMDP registration table — campus outreach</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/nmdp-swab-web.jpg" alt="Swab to save a life photo board">
+          <figcaption>Outreach photo board — “Swab to save a life”</figcaption>
+        </figure>
+      </div>
+    </article>
+    <article class="project" id="chw-training">
+      <div class="meta">
+        <span>November 2026</span>
+        <span>NYU Langone Health · Clinical &amp; Translational Science Institute</span>
+        <span>Completed training</span>
+      </div>
+      <h3 class="title">NYU Langone Community Health Worker Training in Clinical Research</h3>
+      <p>I completed NYU Langone’s CHW training that builds foundational clinical research skills for community health workers and patient navigators. The program covers the fundamentals of clinical research, research design, biomedical ethics, study management and operations, and communication and teamwork.</p>
+    </article>
+
+    <article class="project">
+      <div class="meta">
+        <span>June 2024 – August 2024</span>
+        <span>NYU Langone Health · Dept. of Population Health</span>
+        <span>Full-time</span>
+      </div>
+      <h3 class="title">Youth Summer Wellness Program Coordinator</h3>
+      <p>Designed and delivered educational and wellness curricula for youth participants, including skill-based instruction in leadership, emotional intelligence, and health literacy. Developed and led workshops on research methodology and AI-based research tools, mentoring high school and college students through independent projects on social media use and adolescent mental health.</p>
+      <div class="preview-grid">
+        <a class="preview-card wide" href="assets/Social_Isolation_Research_Project.pdf" target="_blank" rel="noopener">
+          <img src="assets/preview-isolation-web.jpg" alt="Title slide of a research presentation on the impact of social media on social connection and isolation">
+          <div class="cap">Open research presentation (PDF) <small>Social media &amp; social isolation · 26 slides</small></div>
+        </a>
+      </div>
+    </article>
+
+    <article class="project" id="words">
+      <div class="meta">
+        <span>2023–2024</span>
+        <span>501(c)(3) nonprofit</span>
+      </div>
+      <h3 class="title">Words for Wellness</h3>
+      <p>Co-founder and vice president. We built a therapeutic reading library inside an adolescent inpatient psychiatric unit at Bergen New Bridge Medical Center—fundraising, book drives, and weekly follow-through.</p>
+      <div class="gallery">
+        <figure>
+          <img src="assets/wfw-library-books.jpg" alt="A shelf of young adult and children’s books with library call-number labels on the spines">
+          <figcaption>Therapeutic reading library — book shelf</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/wfw-bergen-new-bridge.jpg" alt="Bergen New Bridge Medical Center building in Paramus, New Jersey">
+          <figcaption>Bergen New Bridge Medical Center, Paramus, NJ</figcaption>
+        </figure>
+      </div>
+    </article>
+
+  </div>
+</div>
+
+<div class="page" id="p-resume">
+  <div class="wrap">
+    <div class="pagehead">
+      <div class="section-label">Resume</div>
+      <h1>Resume</h1>
+      <div class="project-links" style="margin-top:18px">
+        <a href="assets/Hana_Bauta_Resume.pdf" target="_blank" rel="noopener" download>Download PDF</a>
+        <a href="https://www.linkedin.com/in/hana-bauta" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <object data="assets/Hana_Bauta_Resume.pdf" type="application/pdf" aria-label="Resume of Hana Bauta" style="width:100%;height:1000px;border:1px solid var(--line);border-radius:8px;background:#fff;margin:18px 0 48px">
+      <p style="margin:24px 0">Your browser can’t show the PDF here. <a href="assets/Hana_Bauta_Resume.pdf" target="_blank" rel="noopener">Open it directly.</a></p>
+    </object>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>Hana Bauta · MPH candidate, Cornell University</div>
+    <div>
+      <a href="mailto:hb537@cornell.edu">hb537@cornell.edu</a>
+      · <a href="https://www.linkedin.com/in/hana-bauta" target="_blank" rel="noopener">LinkedIn</a>
+      · <a href="https://github.com/hb537" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var pages = document.querySelectorAll('.page');
+  var links = document.querySelectorAll('nav a');
+  var titles = {
+    home: 'Hana Bauta | Cornell MPH',
+    projects: 'Projects | Hana Bauta',
+    service: 'Service | Hana Bauta',
+    resume: 'Resume | Hana Bauta'
+  };
+
+  function showPage() {
+    var h = (location.hash || '#home').replace('#', '');
+    // support #projects/apex style
+    var parts = h.split('/');
+    var page = parts[0] || 'home';
+    var sub = parts[1] || null;
+    if (!document.getElementById('p-' + page)) page = 'home';
+
+    pages.forEach(function (p) {
+      p.className = 'page' + (p.id === 'p-' + page ? ' on' : '');
+    });
+    links.forEach(function (a) {
+      var on = a.getAttribute('data-page') === page;
+      a.className = on ? 'on' : '';
+      if (on) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
+    });
+    document.title = titles[page] || titles.home;
+
+    if (page === 'projects') {
+      showSub(sub || 'research');
+    }
+    window.scrollTo(0, 0);
+  }
+
+  function showSub(id) {
+    var panels = document.querySelectorAll('.subpanel');
+    var btns = document.querySelectorAll('.subnav button');
+    panels.forEach(function (p) {
+      p.className = 'subpanel' + (p.id === 'sub-' + id ? ' on' : '');
+    });
+    btns.forEach(function (b) {
+      var on = b.getAttribute('data-sub') === id;
+      b.className = on ? 'on' : '';
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+  }
+
+  document.querySelectorAll('.subnav button').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id = btn.getAttribute('data-sub');
+      // update hash without full reload behavior issues
+      if (history.replaceState) {
+        history.replaceState(null, '', '#projects/' + id);
+      } else {
+        location.hash = 'projects/' + id;
+      }
+      showSub(id);
+    });
+  });
+
+  window.addEventListener('hashchange', showPage);
+  showPage();
+})();
+</script>
+</body>
+</html>
